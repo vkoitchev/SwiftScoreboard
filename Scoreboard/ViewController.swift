@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var awayTeamButtons: [UIButton]!
     @IBOutlet weak var homeTeamScoreDisplay: UILabel!
     @IBOutlet weak var awayTeamScoreDisplay: UILabel!
+    @IBOutlet weak var homeConversion: UIButton!
+    @IBOutlet weak var awayConversion: UIButton!
     
     private var homeScore = 0 {
         didSet {
@@ -31,10 +33,12 @@ class ViewController: UIViewController {
     {
         if homeTeamButtons.contains(buttonPressed) {
             homeScore += score
+            homeConversion.isEnabled = (score == 5)
         }
         else if awayTeamButtons.contains(buttonPressed)
         {
             awayScore += score
+            awayConversion.isEnabled = (score == 5)
         }
     }
     
