@@ -10,16 +10,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet var homeTeamButtons: [UIButton]!
+    @IBOutlet var awayTeamButtons: [UIButton]!
+    @IBOutlet weak var homeTeamScoreDisplay: UILabel!
+    @IBOutlet weak var awayTeamScoreDisplay: UILabel!
+    
+    private var homeScore = 0 {
+        didSet {
+            homeTeamScoreDisplay.text = String(homeScore)
+        }
+    }
+    
+    private var awayScore = 0 {
+        didSet {
+            awayTeamScoreDisplay.text = String(awayScore)
+        }
+    }
+    
+    private func add(score: Int, buttonPressed: UIButton)
+    {
+        if homeTeamButtons.contains(buttonPressed) {
+            homeScore += score
+        }
+        else if awayTeamButtons.contains(buttonPressed)
+        {
+            awayScore += score
+        }
+    }
+    
+    @IBAction func tryScored(_ sender: UIButton) {
+        add(score: 5, buttonPressed: sender)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func conversionScored(_ sender: UIButton) {
+        add(score: 2, buttonPressed: sender)
     }
-
-
+    
+    @IBAction func penaltyScored(_ sender: UIButton) {
+        add(score: 3, buttonPressed: sender)
+    }
+    
+    @IBAction func resetScore() {
+        homeScore = 0
+        awayScore = 0
+    }
 }
 

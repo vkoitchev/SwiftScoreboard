@@ -59,12 +59,20 @@
 				F5A40D341E4F5ED0006B4562 /* AppDelegate.swift */,
 				F5A40D361E4F5ED0006B4562 /* ViewController.swift */,
 				F5A40D381E4F5ED0006B4562 /* Main.storyboard */,
-				F5A40D3E1E4F5ED0006B4562 /* Assets.xcassets */,
-				F5A40D401E4F5ED0006B4562 /* LaunchScreen.storyboard */,
-				F5A40D431E4F5ED0006B4562 /* Info.plist */,
-				F5A40D3B1E4F5ED0006B4562 /* Scoreboard.xcdatamodeld */,
+				F5A40D491E4F5EFB006B4562 /* Supporting */,
 			);
 			path = Scoreboard;
+			sourceTree = "<group>";
+		};
+		F5A40D491E4F5EFB006B4562 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				F5A40D401E4F5ED0006B4562 /* LaunchScreen.storyboard */,
+				F5A40D431E4F5ED0006B4562 /* Info.plist */,
+				F5A40D3E1E4F5ED0006B4562 /* Assets.xcassets */,
+				F5A40D3B1E4F5ED0006B4562 /* Scoreboard.xcdatamodeld */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
